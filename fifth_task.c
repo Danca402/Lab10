@@ -10,7 +10,14 @@ To print for example 1234 in base 10 numeral system first the 1234/10 (123) shou
 
 #include <stdio.h>
 
+void numeralSystem(int num, int base){
+  if(num >= base) numeralSystem(num/base, base);
+  printf("%d",num%base);
+}
+
 int main(){
+  printf("Printing numbers in other base of numeral system:\n");
+  numeralSystem(87,4);
 
 
   return 0;
